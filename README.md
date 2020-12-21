@@ -162,3 +162,14 @@ Code Explanation
 Here n is an integer number we have to print the table of n, first take user input and store the value in ‘n‘. after that use a ‘for loop‘ and put the three condition in ‘for loop‘. Below is a for loop syntax.
 
 So according to above syntax take a user input, and initialize the loop with i = 0 and put the condition i <= 10 and last condition is i++ or i =i+1.And multiplication i and n and print the result is according to the problem statement.
+
+
+**** Day Seven ****
+Task: Given an array of X amount of integers, print the array’s elements in reverse order as a single line of space-separated numbers.
+
+This was a far simpler version of what we needed to do on Day 6, so it was a total breeze in comparison.
+
+
+Process: Create a string variable which will hold our content to print out. Then run a for loop which goes through the array (decrementing by 1 each time) and sticks the array[index] value into myArray string. This proceeds, starting where i = arr.length-1 and ends when i becomes -1.
+
+Why i = arr.length – 1? Because arr.length (in the case of the test case is 4 [1, 4, 3, 2]) is the array index + 1. The array we’re given has length of 4 but index of 3. Whatever the size of the array, its length is always index + 1. So to start from the length value alone wouldn’t work. We need to start with length – 1 and decremented down to the beginning array index of 0.
