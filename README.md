@@ -164,6 +164,15 @@ Here n is an integer number we have to print the table of n, first take user inp
 So according to above syntax take a user input, and initialize the loop with i = 0 and put the condition i <= 10 and last condition is i++ or i =i+1.And multiplication i and n and print the result is according to the problem statement.
 
 
+***** Day Six *****
+Task: Basically take everything learned up to this point in #30daysofcode to complete the assignment. The goal requires strings to go through functions and end up output as a string where the even letters of the string (starting on 0) are printed first, then a space character, and then the odd letters of the string. So, “Hacker” (012345) comes out as “Hce akr” where the left letters are even and right are odd.
+
+Process: Take the given strings (input) and turn them into an array. The demo fed in the strings “2 Hacker Rank” (each word separated by a \n newline). Then, push each character into an odd or even string depending on its number (starting from 0). This whole problem was much tougher than I thought it would be.
+
+
+
+
+
 **** Day Seven ****
 Task: Given an array of X amount of integers, print the array’s elements in reverse order as a single line of space-separated numbers.
 
