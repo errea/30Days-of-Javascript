@@ -182,3 +182,17 @@ This was a far simpler version of what we needed to do on Day 6, so it was a tot
 Process: Create a string variable which will hold our content to print out. Then run a for loop which goes through the array (decrementing by 1 each time) and sticks the array[index] value into myArray string. This proceeds, starting where i = arr.length-1 and ends when i becomes -1.
 
 Why i = arr.length – 1? Because arr.length (in the case of the test case is 4 [1, 4, 3, 2]) is the array index + 1. The array we’re given has length of 4 but index of 3. Whatever the size of the array, its length is always index + 1. So to start from the length value alone wouldn’t work. We need to start with length – 1 and decremented down to the beginning array index of 0.
+
+
+
+Day 8: Dictionaries and Maps
+Task: Create a dictionary which holds an unknown amount of names and associated phone numbers. This phone book dictionary must then output the results as name=phonenumber.
+
+
+So it appears that I chose the wrong language to work through this task with. One of the test cases HackerRank uses features over 10,000 values for the phonebook to be filled with – and JavaScript would time out on this one specifically. As a result of not understanding this, I did finally come upon (and modified) a working JavaScript solution.
+
+Process: The very first step is to get the input (number of entries, name, phone number) and split on the \n (newline). Our number of entries, n, is filled by using parseInt on the input – this should collect the “3” initially put in by HackerRank. Their input is “3 sam 99912222” so 3 is first up and easily grabbed. Initialize a phoneBook dictionary.
+
+Then the values are added to the phoneBook via a for statement. Starting at 0 and going until = n, input value is added to newinput. Newinput is split with a space character and then finally we place it into phoneBook. Then you check if the values are in the dictionary with a second for statement. This simply grabs the input value and checks if “undefined.” If undefined, then output “Not found” and otherwise output name[i]=phonenumber.
+
+
