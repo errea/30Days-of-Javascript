@@ -185,7 +185,7 @@ Why i = arr.length – 1? Because arr.length (in the case of the test case is 4 
 
 
 
-Day 8: Dictionaries and Maps
+*******Day 8: Dictionaries and Maps
 Task: Create a dictionary which holds an unknown amount of names and associated phone numbers. This phone book dictionary must then output the results as name=phonenumber.
 
 
@@ -194,5 +194,102 @@ So it appears that I chose the wrong language to work through this task with. On
 Process: The very first step is to get the input (number of entries, name, phone number) and split on the \n (newline). Our number of entries, n, is filled by using parseInt on the input – this should collect the “3” initially put in by HackerRank. Their input is “3 sam 99912222” so 3 is first up and easily grabbed. Initialize a phoneBook dictionary.
 
 Then the values are added to the phoneBook via a for statement. Starting at 0 and going until = n, input value is added to newinput. Newinput is split with a space character and then finally we place it into phoneBook. Then you check if the values are in the dictionary with a second for statement. This simply grabs the input value and checks if “undefined.” If undefined, then output “Not found” and otherwise output name[i]=phonenumber.
+
+***********Day 9: Recursion
+Task
+Write a factorial function that takes a positive integer, as a parameter and prints the factorial, Using Recursion technique.
+
+Note: If you fail to use recursion or fail to name your recursive function factorial or Factorial, you will get a score of .
+
+Sample Input
+
+3
+1
+3
+Sample Output
+
+6
+1
+6
+
+
+
+
+******Day 10: Binary Numbers
+Task: Given a base-10 integer, n, convert it to a base-2 binary number. Then, find and print the resulting number (in base-10) of the maximum number of consecutive 1’s in n’s binary representation.
+
+
+This problem initially threw me for a loop because I failed to understand what they were asking properly. For one, they expect you to return the count of consecutive 1s. So, in binary value 101, your number result would be 1. Because, even though there are two 1s in the result, they are not consecutive. Here is a bit of code I created first to collect the binary value as an array before discovering .toString(2) as a means to very quickly turn base-10 to base-2.
+
+1
+2
+3
+4
+5
+6
+7
+8
+var binaryArray = [];
+    while (n > 0){
+        var remainder = n%2; //Get remainder value
+        binaryArray.push(remainder); //For input 5 = n, the results are 5/2 has r 1, 2/2 has r 2, and 1/2 has r 1.
+        n = n/2; //n becomes n/2 so we can collect next remainder
+        n = Math.floor(n); //For input 5 = n, the results are 5/2 = 2, 2/2 = 1, and 1/2 = 0.
+    }
+<div class="open_grepper_editor" title="Edit & Save To Grepper"></div>
+Process: First, read the value being passed in by HackerRank (initially 5) and convert it to a base-2 string. Also, create variables which will hold the counting of consecutive values temporarily during an If loop (count) and one which holds it throughout for eventual output to the console (max).
+
+Use a For loop to iterate through binaryArray’s elements. Within this, utilize nested If-else statements. The first checks if element i is equal to 1 (because the task says to only seek consecutive 1s!). If so, increment count, which was initialized to 0, by 1. Then, if count is greater than max (which it will be if it had just been incremented up) set max = count. Else, if binaryArray element i doesn’t equal 1, reset count to 0 and loop again until completion.
+
+
+
+******Day 11: 2D Arrays
+Day11Task: Receive an input of a 6 x 6 2D array. Then, break it into 16 different hourglasses. An hourglass basically looks like the sidebar image. Within the array this orientation of values (3 elements to make up top bar, 1 for middle bar joining the halves together, and 3 items for the bottom bar). Determine which of the 16 hourglasses within the 2D array has the highest sum, and print out that sum.
+
+
+Process: First, figure out what the lowest possible outcome for the hour glass count is. Because basically we should always be coming up with something higher for our end result. This lowest value is -63 (given HackerRank’s input that they can pass values from -9 to 9 into our array). -9 * 7 (each hourglass has 7 numbers) = -63.
+
+*************Day 12: Inheritance
+Objective
+Today, we’re delving into Inheritance. Check out the attached tutorial for learning materials and an instructional video!
+
+Task
+You are given two classes, Person and Student, where Person is the base class and Student is the derived class. Completed code for Person and a declaration for Student are provided for you in the editor. Observe that Student inherits all the properties of Person.
+
+Complete the Student class by writing the following:
+
+A Student class constructor, which has 4 parameters:
+
+A string, firstName.
+A string, lastName.
+An integer, id.
+An integer array (or vector) of test scores, scores.
+A char calculate() method that calculates a Student object’s average and returns the grade character representative of their calculated average:
+
+Letter	Average (a)
+O	90 <= a <= 100
+E	80 <= a < 90
+A	70 <= a < 80
+P	55 <= a < 70
+D	40 <= a < 55
+T	a < 40
+Input Format
+The locked stub code in your editor calls your Student class constructor and passes it the necessary arguments. It also calls the calculate method (which takes no arguments).
+
+You are not responsible for reading the following input from stdin:
+
+The first line contains firstName, lastName, and id, respectively. The second line contains the number of test scores. The third line of space-separated integers describes scores.
+
+Constraints:
+
+1 <= |fistName|,|lastName| <= 10
+
+|id| = 7
+
+0 <= score,average <= 100
+
+Output Format
+This is handled by the locked stub code in your editor. Your output will be correct if your Student class constructor and calculate() method are properly implemented.
+
 
 
