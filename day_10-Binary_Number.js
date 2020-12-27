@@ -1,27 +1,31 @@
 function main() {
   var n = parseInt(readLine());
-  var binary = [];
-
-  while (n > 0) {
-    binary.push(n % 2)
-    n = Math.floor(n / 2)
+  var arr = [];
+  
+  while(n != 0){
+      if (n%2 == 0)
+          arr.push(0);
+      if (n%2 == 1)
+          arr.push(1);
+      n = Math.floor(n/2);
   }
-
-  binary = binary.reverse()
-
-  var ones = 0;;
+  
   var max = 0;
+  var cur = 0;
 
-  for (i = 0; i < binary.length; i++) {
-    if (binary[i] === 1) {
-      ones += 1;
-    } else if (binary[i] === 0) {
-      if (ones > max) max = ones;
-      ones = 0;
-    }
+  
+  for (var i = 0, len = arr.length; i < len; i++) {
+      if (arr[i] == 1)
+          cur++;
+      else if (arr[i] == 0){
+          if (cur > max)
+              max = cur;
+          cur = 0;
+      }
   }
-
-  if (ones > max) max = ones
-
-  console.log(max)
+  
+  if (cur > max)
+      max = cur;
+  
+  console.log(max);
 }
