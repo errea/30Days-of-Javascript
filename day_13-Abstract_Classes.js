@@ -12,7 +12,6 @@ class MyBook extends Book {
     super(title, author);
     this.price = price
   }
-
   /**
     *   Method Name: display
     *
