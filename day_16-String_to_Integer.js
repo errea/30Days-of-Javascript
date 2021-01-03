@@ -2,7 +2,7 @@ function main() {
   /*
      * Try using `eval`
      */
-  var S = readLine();
+  const S = readLine();
 
   try {
     console.log(eval(S))
