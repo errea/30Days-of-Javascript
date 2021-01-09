@@ -615,5 +615,101 @@ The array  is not sorted, so we perform the following  swaps. Each line shows  a
 
 After  swaps, the array is sorted.
 
+********Day 21*******
+********Day 22********
+*******Day 23********
+*******Day 24: More on Linked List
+Objective
+Check out the Tutorial tab for learning materials and an instructional video!
+
+Task
+A Node class is provided for you in the editor. A Node object has an integer data field, data, and a Node instance pointer, next, pointing to another node (i.e.: the next node in a list).
+
+A removeDuplicates function is declared in your editor, which takes a pointer to the head node of a linked list as a parameter. Complete removeDuplicates so that it deletes any duplicate nodes from the list and returns the head of the updated list.
+
+Note: The head pointer may be null, indicating that the list is empty. Be sure to reset your next pointer when performing deletions to avoid breaking the list.
+
+Input Format
+You do not need to read any input from stdin. The following input is handled by the locked stub code and passed to the removeDuplicates function:
+The first line contains an integer, N, the number of nodes to be inserted.
+The N subsequent lines each contain an integer describing the data value of a node being inserted at the list’s tail.
+
+Constraints
+The data elements of the linked list argument will always be in non-decreasing order.
+Output Format
+Your removeDuplicates function should return the head of the updated linked list. The locked stub code in your editor will print the returned list to stdout.
+
+Sample Input
+1
+2
+3
+4
+5
+6
+7
+6
+1
+2
+2
+3
+3
+4
+Sample Output
+1
+1 2 3 4
+Explanation
+N = 6, and our non-decreasing list is {1, 2, 2, 3, 3, 4}. The values 2 and 3 both occur twice in the list, so we remove the two duplicate nodes. We then return our updated (ascending) list, which is {1, 2, 3, 4}.
+
+************25: Running time and complexity
+Objective
+Today we’re learning about running time! Check out the Tutorial tab for learning materials and an instructional video!
+
+Task
+A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself. Given a number, n, determine and print whether it’s Prime or Not Prime.
+
+Note: If possible, try to come up with a  primality algorithm, or see what sort of optimizations you come up with for an  algorithm. Be sure to check out the Editorial after submitting your code!
+
+Input Format
+The first line contains an integer, T, the number of test cases.
+Each of the T subsequent lines contains an integer, n, to be tested for primality.
+
+Constraints
+1 <= T <= 30
+1 <= n <= 2 X 109
+Output Format
+For each test case, print whether n is Prime or Not prime on a new line.
+
+Sample Input
+1
+2
+3
+4
+3
+12
+5
+7
+Sample Output
+1
+2
+3
+Not prime
+Prime
+Prime
+Explanation
+Test Case 0: n = 12.
+
+12 is divisible by numbers other than 1 and itself (i.e.: 2, 3, 6), so we print Not prime on a new line.
+
+Test Case 1: n = 5.
+
+5 is only divisible 1 and itself, so we print Prime on a new line.
+
+Test Case 2: n = 7.
+
+7 is only divisible 1 and itself, so we print Prime on a new line.
+
+
+
+
 
 
