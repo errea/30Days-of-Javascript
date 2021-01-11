@@ -736,6 +736,80 @@ Task: This time around you’re not writing any code but should instead test the
 
 Process: There are rules for your input, so simply follow those when crafting the lines of input. Beyond that, there’s really nothing to this problem. I’ll admit that the expectation of what we’re supposed to do tripped me up. It seemed like there is more to it than this, but apparently not.
 
+This problem is about unit testing.
+
+Your company needs a function that meets the following requirements:
+
+For a given array of  integers, the function returns the index of the element with the minimum value in the array. If there is more than one element with the minimum value, it returns the smallest one.
+If an empty array is passed to the function, it raises an exception. A colleague has written this method. The implementation in Python is listed below. Implementations in other languages can be found in the code template.
+def minimum_index(seq):
+    if len(seq) == 0:
+        raise ValueError("Cannot get the minimum value index from an empty sequence")
+    min_idx = 0
+    for i in range(1, len(seq)):
+        if a[i] < a[min_idx]:
+            min_idx = i
+    return min_idx
+A coworker has prepared functions that will perform the tests and validate return values. Finish the implementation of  classes to provide data and expected results for the tests.
+
+Complete the following methods.
+
+In the class TestDataEmptyArray:
+
+get_array() returns an empty array
+In the class TestDataUniqueValues:
+
+get_array() returns an array of size at least 2 with all unique elements
+get_expected_result() returns the expected minimum value index for this array
+In the class TestDataExactlyTwoDifferentMinimums:
+
+get_array() returns an array where the minimum value occurs at exactly 2 indices
+get_expected_result() returns the expected index
+Take a look at the code template to see the exact implementation of functions that your colleague already implemented.
+
+Note: The arrays are indexed from .
+
+C++
+
+
+22232425262728293031323334353637383940411
+#include <algorithm>
+#include <iostream>
+#include <stdexcept>
+#include <vector>
+#include <cassert>
+#include <set>
+
+using namespace std;
+
+int minimum_index(vector<int> seq) {
+    if (seq.empty()) {
+        throw invalid_argument("Cannot get the minimum value index from an empty sequence");
+    }
+    int min_idx = 0;
+    for (int i = 1; i < seq.size(); ++i) {
+        if (seq[i] < seq[min_idx]) {
+            min_idx = i;
+        }
+    }
+    return min_idx;
+}
+
+class TestDataEmptyArray {
+public:
+    static vector<int> get_array() {
+        // complete this function
+    }
+
+};
+
+
+Line: 22 Col: 1
+Submit CodeRun Code
+Upload Code as File
+Test against custom input
+Contest CalendarBlog
+
 ************Day 28: RegEx, Patterns, and Intro to Databases
 Task: Given a string of people’s first names and email addresses, print out the names of folks with a gmail.com address in alphabetical order. Basically, this is meant to mimic what you might see in a database table.
 
