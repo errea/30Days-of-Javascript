@@ -709,7 +709,42 @@ Test Case 2: n = 7.
 7 is only divisible 1 and itself, so we print Prime on a new line.
 
 
+Task: Given a number, n, determine and print whether it is prime or not prime.
 
 
+Process: The first step is to taken HackerRank’s given input of numbers and split them by \n so we have each input value to be accessed separately. There is a messageArray which holds our not prime or prime strings since we’ll be using them a few times in the problem. Mainly, for these early If statements checking on some early inputs. I.e., 1 is not a prime number so it has a special If statement to capture it. On the other hand, two is defined as a prime number.
 
+However, did you notice If(input % 2 == 0) returns not prime? Without our If(input == 2) then 2 would evaluate to not prime because 2 % 2 is 0. So that’s why the second If statement is there. Aside from 2, every other even number is not prime (because if nothing else it’s still divisible by 2!). The third If statement captures all even numbers to quickly return that they’re not prime.
+
+The earliest prime numbers are 2, 3, 5, 7, 11, and 13. In the code so far, we properly evaluate up until 9. 9 must go through the For loop. Its square root is 3 and i is set to 3 initially. So the loop will execute once (for more than one reason). When the nested If runs it finds that 9 % 3 == 0 which means it’s not prime. Every odd number from 9 onward must go through the For loop for a limited amount of time.
+
+That limit is the incrementing upward of i until it’s larger than the square root of input. If at no point the mod doesn’t evaluate to 0 then that means we’ve got a prime on our hands. Since the nested If loop never returns a value, we end the For loop and hop down to the next line which returns Prime. Finally, our resulting messages are printed to the console with \n in between each.
+
+*************Day 26:Nested Logic
+Task: Determine the late fee (if applicable) on a book returned to the library. HackerRank provides the actual date and expected date of return.
+
+
+Process: First you need to collect the dates input by HackerRank. This is accomplished by splitting the input twice. First, by \n (actual date is on one line and expected date is on another). Then, split each of the two lines by space character to get the day, month, and year. Tricky!
+
+Then you can send these along by calling calculateFine with actual and expected as parameters. This way, you can use content such as actual.year to grab the year value, and so on. From there it’s easy work to simply do a few If statements to determine how late something is and run a calculation. Then finally the late fee is printed to the console.
+
+
+*************Day 27:Testing 
+
+Task: This time around you’re not writing any code but should instead test the code with some input.
+
+
+Process: There are rules for your input, so simply follow those when crafting the lines of input. Beyond that, there’s really nothing to this problem. I’ll admit that the expectation of what we’re supposed to do tripped me up. It seemed like there is more to it than this, but apparently not.
+
+************Day 28: RegEx, Patterns, and Intro to Databases
+Task: Given a string of people’s first names and email addresses, print out the names of folks with a gmail.com address in alphabetical order. Basically, this is meant to mimic what you might see in a database table.
+
+
+As someone who uses databases on a near daily basis this would be a query I could write in my sleep. In JavaScript, however, it’s a bit more work.
+
+Process: Use RegExp (something you can also use in SQL) which will check for the phrase “@gmail.com” in the upcoming strings provided by HackerRank. There’s also an array called names which will hold, well, the first names. The for statement iterating through the lines of input was provided by HackerRank as well. It basically just gives us firstName as a variable as well as emailID. How kind of them.
+
+With that taken care of we check on emailID with our RegExp “@gmail.com” and if we find it then we get to push the firstName onto our names array! With the names all nicely in our array, we finally sort alphabetically and print them out.
+
+*************Day 29:
 
